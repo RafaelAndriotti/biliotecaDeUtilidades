@@ -6,6 +6,7 @@ function removeDuplicata(array) {
 
 }
 
+<<<<<<< HEAD
 function embaralhaElementos(array){
 
   var copy = [], n = array.length, i;
@@ -25,6 +26,18 @@ function embaralhaElementos(array){
   }
 
   return copy
+=======
+function embaralhaElementos(arr){
+
+      for (let i = arr.length - 1; i > 0; i--){
+    
+          const j = Math.floor(Math.random() * (i + 1));
+
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  return arr;
+>>>>>>> cf3c3d7 (adicionando funcoes em arrays e tratando erros)
 } 
 
 console.log(embaralhaElementos([10,20,30,40,50]))
