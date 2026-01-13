@@ -1,4 +1,10 @@
-function removeDuplicata(array) {
+import { erros } from './err/errors.js'
+
+export function removeDuplicata(array) {
+
+    if (array.length === 0) {
+        throw new Error(erros.EMPTY_ARRAY)
+    }
 
     const arraySemDuplicados = array.filter((pos, i) => array.indexOf(pos) === i)
 
@@ -6,28 +12,11 @@ function removeDuplicata(array) {
 
 }
 
-<<<<<<< HEAD
-function embaralhaElementos(array){
+export function embaralhaElementos(arr){
 
-  var copy = [], n = array.length, i;
-
-  // While there remain elements to shuffle…
-  while (n) {
-
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * array.length);
-
-    // If not already shuffled, move it to the new array.
-    if (i in array) {
-      copy.push(array[i]);
-      delete array[i];
-      n--;
+    if (arr.length === 0) {
+        throw new Error(erros.EMPTY_ARRAY)
     }
-  }
-
-  return copy
-=======
-function embaralhaElementos(arr){
 
       for (let i = arr.length - 1; i > 0; i--){
     
@@ -37,7 +26,5 @@ function embaralhaElementos(arr){
   }
 
   return arr;
->>>>>>> cf3c3d7 (adicionando funcoes em arrays e tratando erros)
 } 
 
-console.log(embaralhaElementos([10,20,30,40,50]))

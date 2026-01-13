@@ -1,6 +1,15 @@
-function geraNumeroAleatorio(primeiroNumero, segundoNumero){
+import {erros} from './err/errors.js'
 
-    for (let i = primeiroNumero; i < segundoNumero; i++){
+export function geraNumeroAleatorio(primeiroNumero, segundoNumero){
+
+    if(isNaN(primeiroNumero, segundoNumero)){
+        throw new Error(erros.NOT_A_NUMBER)
+    }
+    if(primeiroNumero < 0 || segundoNumero < 0){
+        throw new Error(erros.INVALID_NUMBER)
+    }
+    try {
+        for (let i = primeiroNumero; i < segundoNumero; i++){
 
         primeiroNumero = Math.ceil(primeiroNumero)
         segundoNumero = Math.ceil(segundoNumero)
@@ -8,6 +17,8 @@ function geraNumeroAleatorio(primeiroNumero, segundoNumero){
         console.log(gerarNumero);
 
     }
-}
+    } catch (e) {
+        return e
+    }
 
-module.exports = { geraNumeroAleatorio }
+}

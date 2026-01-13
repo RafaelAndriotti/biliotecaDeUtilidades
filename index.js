@@ -1,10 +1,13 @@
 // Importando os modulos 
-<<<<<<< HEAD
-const validarSenhaEEmail = require('./src/validarSenhaEEmail')
-const criarNumerosAleatorios = require('./src/criarNumerosAleatorios')
-=======
-import { validaEmail, validaSenha } from './src/validarSenhaEEmail'
->>>>>>> cf3c3d7 (adicionando funcoes em arrays e tratando erros)
-const trocarFormatoStrings = require('./src/trocarFormatoString')
+import { validaEmail, validaSenha } from './src/validarSenhaEEmail.js'
+import { removeDuplicata, embaralhaElementos } from './src/manipularArrays.js'
+import { toCamelCase, toSnakeCase, toKebabCase } from './src/trocarFormatoString.js'
+import { geraNumeroAleatorio } from './src/criarNumerosAleatorios.js'
 
-module.exports = { validarSenhaEEmail, criarNumerosAleatorios, trocarFormatoStrings }
+export * from './src/criarNumerosAleatorios.js'
+export * from './src/manipularArrays.js'
+export * from './src/trocarFormatoString.js'
+export * from './src/validarSenhaEEmail.js'
+export * from './src/err/errors.js'
+
+

@@ -1,33 +1,32 @@
-const errors = require('./err/errors.json')
+import { erros } from './err/errors.js'
 
-function validaEmail(email) {
+export function validaEmail(email) {
     
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     
     const emailValido = regex.test(email)
 
     if (emailValido){
-        console.log('E-mail valido');
+        console.log(`O E-mail ${email} eh valido`);
         
-
     } else{
-        throw new Error(errors.INVALID_EMAIL)
+        throw new Error(erros.INVALID_EMAIL)
     }
 }
 
-function validaSenha(senha) {
+export function validaSenha(senha) {
 
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     
     const senhaValida = regex.test(senha)
 
     if(senhaValida) {
-        console.log('Senha valida');
+        console.log('A senha atende os padroes do nosso sistema');
         
     } else {
-        throw new Error(errors.INVALID_PASSWORD)
+        throw new Error(erros.INVALID_PASSWORD)
     }
 
 }
 
-module.exports = { validaEmail, validaSenha }
+

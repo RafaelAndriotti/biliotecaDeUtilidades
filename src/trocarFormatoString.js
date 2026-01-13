@@ -1,5 +1,10 @@
-function toCamelCase (palavra) {
+import { erros } from "./err/errors.js"
+
+export function toCamelCase (palavra) {
     
+    if (palavra === '') {
+        throw new Error(erros.EMPTY_STRING)
+    }
     return palavra
             .toLowerCase()
             .split(/[\s_-]+/)
@@ -7,8 +12,11 @@ function toCamelCase (palavra) {
             .join('')
 }
 
-function toSnakeCase(palavra) {
+export function toSnakeCase(palavra) {
 
+    if (palavra === '') {
+        throw new Error(erros.EMPTY_STRING)
+    }
     return palavra
             .toLowerCase()
             .split(/[\s-]+/)
@@ -16,8 +24,11 @@ function toSnakeCase(palavra) {
 
 }
 
-function toKebabCase(palavra) {
+export function toKebabCase(palavra) {
 
+    if (palavra === '') {
+        throw new Error(erros.EMPTY_STRING)
+    }
     return palavra
             .toLowerCase()
             .split(/[\s_]+/)
@@ -25,4 +36,3 @@ function toKebabCase(palavra) {
 
 }
 
-module.exports = { toCamelCase, toKebabCase, toSnakeCase }
