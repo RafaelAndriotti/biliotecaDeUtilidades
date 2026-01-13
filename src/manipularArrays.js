@@ -28,3 +28,19 @@ export function embaralhaElementos(arr){
   return arr;
 } 
 
+export function dividirArrays(arr, tam) {
+    if (arr.length === 0){
+        throw new Error(erros.EMPTY_ARRAY)
+    }
+    const novoArray = []
+
+    for (let i = 0;i < arr.length; i += tam){
+        novoArray.push(arr.slice(i, i + tam));
+    }
+
+    return novoArray
+
+}
+
+console.log(dividirArrays([], 3))
+
